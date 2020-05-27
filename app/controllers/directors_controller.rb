@@ -1,12 +1,13 @@
 class MoviesController < ApplicationController
-  def casablanca
-    c = Movies.where
-
-
+  def last
     render({ :template => "movie_templates/cb.html.erb" })
   end
   
-  def before2k
+  def under_55
+    render({ :template => "movie_templates/pre2000.html.erb" })
+  end
+
+  def francis
     render({ :template => "movie_templates/pre2000.html.erb" })
   end
 
