@@ -12,8 +12,7 @@ class DirectorsController < ApplicationController
   end
 
    def last
-      d = Director.order({:dob => :desc}).first
-      @YoungestName = d.name
+      @YoungestName = Director.order({:dob => :desc}).first.name
       @YoungestDOB = Director.order({:dob => :desc}).first.dob
       render({ :template => "movie_templates/youngest.html.erb" })
   end
