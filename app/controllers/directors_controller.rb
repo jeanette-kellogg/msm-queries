@@ -1,4 +1,4 @@
-class MoviesController < ApplicationController
+class DirectorsController < ApplicationController
   def last
     render({ :template => "movie_templates/cb.html.erb" })
   end
@@ -9,6 +9,13 @@ class MoviesController < ApplicationController
 
   def francis
     render({ :template => "movie_templates/pre2000.html.erb" })
+  end
+
+   def last
+      d = Director.order({:dob => :desc}).first
+      @YoungestName = d.name
+      @YoungestDOB = Director.order({:dob => :desc}).first.dob
+      render({ :template => "movie_templates/youngest.html.erb" })
   end
 
 end
